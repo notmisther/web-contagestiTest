@@ -17,6 +17,8 @@ import Hero from "../components/sections/Hero";
 import AdvisoryCarousel from "../components/sections/AdvisoryCarousel";
 import AccountingSolutionsSection from "../components/sections/AccountingSolutionsSection";
 import TrainingSection from "../components/sections/TrainingSection";
+import DigitalTransformationSection from "../components/sections/DigitalTransformationSection";
+import FAQSection from "../components/sections/FAQSection";
 ---
 
 <Layout title="Contagesti">
@@ -32,6 +34,8 @@ import TrainingSection from "../components/sections/TrainingSection";
     entrepreneurImageSrc="/images/image-contagesti-emprendedor.png"
     teamImageSrc="/images/image-contagesti-equipo.png"
   />
+  <DigitalTransformationSection />
+  <FAQSection client:load />
   <FooterPrincipal
     brandName="Contagesti"
     phone="+51 999 999 999"
