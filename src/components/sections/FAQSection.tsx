@@ -133,7 +133,7 @@ export default function FAQSection() {
               href="#servicios"
               className="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] px-8 text-center text-[var(--color-brand-blue-strong)] sm:min-w-[220px]"
             >
-              Tenngo una pregunta
+              Tengo una pregunta
             </a>
           </div>
         </div>
