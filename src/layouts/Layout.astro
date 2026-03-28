@@ -1,5 +1,9 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+
+import Headermejorado from "../components/creados/Header-mejorado.astro";
+import FooterPrincipal from "../components/a reutilizar luego/FooterPrincipal";
 
 interface Props {
   title?: string;
@@ -15,8 +19,16 @@ const { title = "Contagesti" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body>
+    <Headermejorado />
     <slot />
+    <FooterPrincipal
+      brandName="Contagesti"
+      phone="+51 999 999 999"
+      email="contacto@contagesti.com"
+      address="Trujillo, Perú"
+    />
   </body>
 </html>

@@ -1,9 +1,18 @@
 ---
 const navItems = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Sobre nosotros", href: "#sobre-nosotros" },
+  { label: "Inicio", href: "/" },
+  { label: "Sobre nosotros", href: "/sobre-nosotros" },
   { label: "Eventos", href: "/eventos" },
-  { label: "Preguntas frecuentes", href: "#preguntas-frecuentes" },
+  { label: "Preguntas frecuentes", href: "/#preguntas-frecuentes" },
+];
+---
+
+<!-- ---
+const navItems = [
+  { label: "Inicio", href: "/" },
+  { label: "Sobre nosotros", href: "/sobre-nosotros" },
+  { label: "Eventos", href: "/eventos" },
+  { label: "Preguntas frecuentes", href: "/#preguntas-frecuentes" },
 ];
 ---
 
@@ -37,7 +46,7 @@ const navItems = [
       </nav>
 
       <a
-        href="#contacto"
+        href="/#contacto"
         class="interactive-button-soft hidden h-[42px] items-center justify-center rounded-full bg-[var(--color-brand-green)] px-[24px] type-note font-semibold leading-none text-white md:inline-flex"
       >
         Contáctanos
@@ -91,7 +100,135 @@ const navItems = [
       }
 
       <a
-        href="#contacto"
+        href="/#contacto"
+        class="interactive-button-soft mt-3 inline-flex h-[42px] items-center justify-center rounded-full bg-[var(--color-brand-green)] px-[24px] text-[14px] font-semibold leading-none text-white"
+      >
+        Contáctanos
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggleButton = document.querySelector("[data-mobile-menu-toggle]");
+  const mobileMenu = document.querySelector("[data-mobile-menu]");
+
+  if (
+    toggleButton instanceof HTMLButtonElement &&
+    mobileMenu instanceof HTMLElement
+  ) {
+    const setMenuState = (isOpen: boolean) => {
+      mobileMenu.classList.toggle("hidden", !isOpen);
+      toggleButton.setAttribute("aria-expanded", String(isOpen));
+      toggleButton.setAttribute(
+        "aria-label",
+        isOpen ? "Cerrar menú" : "Abrir menú",
+      );
+    };
+
+    toggleButton.addEventListener("click", () => {
+      const isClosed = mobileMenu.classList.contains("hidden");
+      setMenuState(isClosed);
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        setMenuState(false);
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        setMenuState(false);
+      }
+    });
+  }
+</script> -->
+<header class="static w-full bg-[var(--page-bg)] md:sticky md:top-0 md:z-50">
+  <div
+    class="mx-auto flex h-[var(--header-height)] max-w-[var(--section-max)] items-center justify-between px-4 md:px-6 lg:px-8"
+  >
+    <a
+      href="/"
+      aria-label="Ir al inicio"
+      class="shrink-0 text-[28px] font-extrabold leading-none tracking-[var(--tracking-display)] text-[var(--color-text-main)]"
+    >
+      Contagesti
+    </a>
+
+    <div class="flex items-center gap-3 md:gap-6 lg:gap-[58px]">
+      <nav
+        aria-label="Navegación principal"
+        class="hidden items-center gap-8 md:flex lg:gap-[58px]"
+      >
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="type-note text-[var(--color-text-main)] interactive-button-soft"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <a
+        href="/#contacto"
+        class="interactive-button-soft hidden h-[42px] items-center justify-center rounded-full bg-[var(--color-brand-green)] px-[24px] type-note font-semibold leading-none text-white md:inline-flex"
+      >
+        Contáctanos
+      </a>
+
+      <button
+        type="button"
+        aria-label="Abrir menú"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        data-mobile-menu-toggle
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-text-main)] transition-colors duration-200 hover:bg-black/5 md:hidden"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    data-mobile-menu
+    class="hidden border-t border-black/5 bg-[var(--page-bg)] md:hidden"
+  >
+    <nav
+      aria-label="Navegación principal móvil"
+      class="mx-auto flex max-w-[var(--section-max)] flex-col px-4 py-4"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="rounded-[14px] px-3 py-3 text-[14px] font-medium leading-none text-[var(--color-text-main)] transition-colors duration-200 hover:bg-black/5"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+
+      <a
+        href="/#contacto"
         class="interactive-button-soft mt-3 inline-flex h-[42px] items-center justify-center rounded-full bg-[var(--color-brand-green)] px-[24px] text-[14px] font-semibold leading-none text-white"
       >
         Contáctanos

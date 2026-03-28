@@ -1,15 +1,7 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-import ContagestiAccountingSectionMockups from "../components/a reutilizar luego/ContagestiAccountingSectionMockups";
-import ContabilidadSection from "../components/a reutilizar luego/ContabilidadSection";
-
-import SeccionComercialContabilidad from "../components/a reutilizar luego/SeccionComercialContabilidad";
-import SeccionComercialCapacitaciones from "../components/a reutilizar luego/SeccionComercialCapacitaciones";
-import SeccionComercialTransformacionDigital from "../components/a reutilizar luego/SeccionComercialTransformacionDigital";
 
 import FooterPrincipal from "../components/a reutilizar luego/FooterPrincipal";
-import Header from "../components/creados/Header.astro";
 import Headermejorado from "../components/creados/Header-mejorado.astro";
 
 //sections
@@ -22,11 +14,10 @@ import FAQSection from "../components/sections/FAQSection";
 ---
 
 <Layout title="Contagesti">
-  <!-- <SeccionComercialContabilidad href="/contabilidad" /> -->
-  <!-- <SeccionComercialCapacitaciones href="/capacitaciones" /> -->
-  <!-- <Header /> -->
-  <Headermejorado />
-  <Hero imageSrc="/images/image-hero.png" />
+  <!-- <Headermejorado /> -->
+  <section id="inicio">
+    <Hero imageSrc="/images/image-hero.png" />
+  </section>
   <AdvisoryCarousel client:visible />
   <AccountingSolutionsSection />
   <TrainingSection
@@ -36,11 +27,10 @@ import FAQSection from "../components/sections/FAQSection";
   />
   <DigitalTransformationSection />
   <FAQSection client:visible />
-  <FooterPrincipal
+  <!-- <FooterPrincipal
     brandName="Contagesti"
     phone="+51 999 999 999"
     email="contacto@contagesti.com"
     address="Trujillo, Perú"
-  />
-  <!-- <SeccionComercialTransformacionDigital href="/transformacion-digital" /> -->
+  /> -->
 </Layout>

@@ -1,0 +1,408 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pillars = [
+  {
+    title: "Acompañamiento",
+    description:
+      "No creemos en soluciones frías ni genéricas. Queremos que cada cliente sienta respaldo real para tomar decisiones con más seguridad.",
+  },
+  {
+    title: "Adaptabilidad",
+    description:
+      "Cada negocio vive una realidad distinta. Por eso ajustamos la estrategia y la solución al ritmo, etapa y necesidad de cada cliente.",
+  },
+  {
+    title: "Personalización",
+    description:
+      "No se trata de vender por vender. Se trata de entender qué necesita el negocio hoy y construir una solución que sí tenga sentido.",
+  },
+];
+
+const serviceGroups = [
+  {
+    title: "Asesoría contable y financiera",
+    description:
+      "Ayudamos a que el negocio tenga más claridad, más orden y mejores bases para decidir.",
+    items: [
+      "Contabilidad al día",
+      "Información financiera clara",
+      "Acompañamiento para decisiones",
+    ],
+  },
+  {
+    title: "Asesoría de gestión",
+    description:
+      "Impulsamos la formalización, el orden y la mejora de la gestión para crecer con más control.",
+    items: [
+      "Formalización de negocios",
+      "Mejora de procesos",
+      "Soporte para gestión y crecimiento",
+    ],
+  },
+  {
+    title: "Capacitaciones",
+    description:
+      "Formamos emprendedores y equipos para que entiendan mejor su negocio y tomen decisiones con más criterio.",
+    items: [
+      "Capacitaciones para emprendedores",
+      "Capacitaciones para equipos",
+      "Temas financieros y de gestión",
+    ],
+  },
+  {
+    title: "Presencia digital",
+    description:
+      "Creamos páginas web y landing pages pensadas para generar confianza, mostrar bien el negocio y ayudar a captar clientes.",
+    items: [
+      "Landing pages comerciales",
+      "Web corporativa",
+      "Enfoque en conversión y contacto",
+    ],
+  },
+  {
+    title: "Automatización de procesos",
+    description:
+      "Automatizamos tareas repetitivas para que el negocio responda más rápido, pierda menos tiempo y tenga más orden.",
+    items: [
+      "WhatsApp y correos",
+      "Formularios y registros",
+      "Automatizaciones con Excel y flujos internos",
+    ],
+  },
+  {
+    title: "Sistemas a medida",
+    description:
+      "Desarrollamos soluciones adaptadas al negocio para centralizar información, controlar procesos y crecer con una base sólida.",
+    items: [
+      "Sistemas internos",
+      "Seguimiento y control",
+      "Soluciones según la necesidad real",
+    ],
+  },
+];
+
+const stats = [
+  { value: "250K", label: "soles liberados de entidades financieras" },
+  { value: "438", label: "consultas atendidas" },
+  { value: "38", label: "trabajadores independientes formalizados" },
+  { value: "42", label: "empresas formalizadas" },
+  { value: "12", label: "ciudades con presencia" },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Desde que trabajamos con Contagesti, nuestras finanzas están organizadas y tenemos mayor claridad para tomar decisiones.",
+    author: "María C.",
+    role: "Microempresa",
+  },
+  {
+    quote:
+      "Lo que más valoro es la atención cercana y estratégica. No es solo contabilidad, es orientación real para el negocio.",
+    author: "Alejandra M.",
+    role: "Emprendedora",
+  },
+  {
+    quote:
+      "Como emprendedor, necesitaba alguien que me explique de forma clara y estratégica. Contagesti superó mis expectativas.",
+    author: "José F.",
+    role: "Emprendedor",
+  },
+];
+---
+
+<Layout title="Contagesti">
+  <main class="bg-[var(--page-bg)]">
+    <section class="bg-[var(--color-brand-blue)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div
+          class="grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10"
+        >
+          <div
+            class="rounded-[var(--radius-card-lg)] bg-[var(--color-surface-white)] p-7 shadow-[var(--shadow-card)] sm:p-8 lg:p-10"
+          >
+            <p class="type-eyebrow uppercase text-[var(--color-text-muted)]">
+              SOBRE NOSOTROS
+            </p>
+
+            <h1 class="type-h1-5 mt-3 text-[var(--color-brand-blue-strong)]">
+              Acompañamos negocios que quieren
+              <span class="text-[var(--color-brand-green)]">
+                ordenarse, crecer y vender mejor</span
+              >
+            </h1>
+
+            <p
+              class="type-text mt-5 max-w-[720px] text-[var(--color-text-body)]"
+            >
+              En Contagesti creemos que un negocio crece mejor cuando entiende
+              sus números, mejora su gestión y usa herramientas que realmente le
+              ayudan. Por eso combinamos asesoría contable, financiera y de
+              gestión con soluciones digitales pensadas para emprendedores,
+              microempresas y pequeñas empresas.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#contacto"
+                class="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-green)] px-8 text-center text-white shadow-[var(--shadow-button-green)] sm:min-w-[220px]"
+              >
+                Quiero conversar
+              </a>
+
+              <a
+                href="#lo-que-hacemos"
+                class="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] px-8 text-center text-[var(--color-brand-blue-strong)] sm:min-w-[220px]"
+              >
+                Ver lo que hacemos
+              </a>
+            </div>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            <div
+              class="rounded-[var(--radius-card-lg)] border border-white/10 bg-white/10 p-6 text-[var(--color-text-on-dark)]"
+            >
+              <p class="type-eyebrow uppercase opacity-80">
+                Nuestra forma de trabajar
+              </p>
+              <h2 class="type-h3 mt-3 text-[var(--color-text-on-dark)]">
+                Menos complicación, más claridad
+              </h2>
+              <p class="type-text mt-3 opacity-90">
+                Buscamos que el cliente sienta que entiende lo que pasa en su
+                negocio y que realmente tiene un aliado para avanzar, no solo un
+                proveedor.
+              </p>
+            </div>
+
+            <div
+              class="rounded-[var(--radius-card-lg)] border border-white/10 bg-white/10 p-6 text-[var(--color-text-on-dark)]"
+            >
+              <p class="type-eyebrow uppercase opacity-80">Nuestro enfoque</p>
+              <h2 class="type-h3 mt-3 text-[var(--color-text-on-dark)]">
+                Estrategia + cercanía + ejecución
+              </h2>
+              <p class="type-text mt-3 opacity-90">
+                Queremos conectar con la realidad del negocio, entenderla bien y
+                convertirla en acciones concretas que sí ayuden a vender,
+                organizar y crecer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--page-bg)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div class="mx-auto max-w-[980px] text-center">
+          <p class="type-eyebrow uppercase text-[var(--color-text-muted)]">
+            LO QUE NOS MUEVE
+          </p>
+          <h2 class="type-h2 mt-3 text-[var(--color-brand-blue-strong)]">
+            No queremos solo cumplir. Queremos que el cliente
+            <span class="text-[var(--color-brand-green)]">
+              avance con más confianza</span
+            >
+          </h2>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          {
+            pillars.map((pillar, index) => (
+              <article class="interactive-card-soft rounded-[var(--radius-card-lg)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] p-6 shadow-[var(--shadow-card)] sm:p-7">
+                <div class="flex h-14 w-14 items-center justify-center rounded-[20px] bg-[var(--color-surface-soft)] text-[var(--color-brand-blue-strong)]">
+                  <span class="type-h5">0{index + 1}</span>
+                </div>
+
+                <h3 class="type-card-title mt-6 text-[var(--color-brand-blue-strong)]">
+                  {pillar.title}
+                </h3>
+
+                <p class="type-card-body mt-4 text-[var(--color-text-body)]">
+                  {pillar.description}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="lo-que-hacemos"
+      class="bg-[var(--color-surface-base)] py-14 sm:py-16 lg:py-20"
+    >
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div class="mx-auto max-w-[980px] text-center">
+          <p class="type-eyebrow uppercase text-[var(--color-text-muted)]">
+            LO QUE HACEMOS HOY
+          </p>
+          <h2 class="type-h2 mt-3 text-[var(--color-brand-blue-strong)]">
+            Unimos asesoría, gestión y soluciones digitales para
+            <span class="text-[var(--color-brand-green)]">
+              resolver problemas reales</span
+            >
+          </h2>
+        </div>
+
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          {
+            serviceGroups.map((group) => (
+              <article class="interactive-card-soft rounded-[var(--radius-card-lg)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] p-6 shadow-[var(--shadow-card)] sm:p-7">
+                <h3 class="type-card-title text-[var(--color-brand-blue-strong)]">
+                  {group.title}
+                </h3>
+
+                <p class="type-card-body mt-4 text-[var(--color-text-body)]">
+                  {group.description}
+                </p>
+
+                <div class="mt-5 space-y-3">
+                  {group.items.map((item) => (
+                    <div class="flex items-start gap-3">
+                      <span class="mt-1 h-[10px] w-[10px] shrink-0 rounded-full bg-[var(--color-brand-green)]" />
+                      <p class="type-text-sm text-[var(--color-text-body)]">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--page-bg)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div
+            class="rounded-[var(--radius-card-lg)] bg-[var(--color-brand-blue)] p-7 text-[var(--color-text-on-dark)] shadow-[var(--shadow-card)] sm:p-8"
+          >
+            <p class="type-eyebrow uppercase opacity-80">
+              RESULTADOS Y RESPALDO
+            </p>
+            <h2 class="type-h3 mt-3 text-[var(--color-text-on-dark)]">
+              Los resultados ayudan a generar confianza
+            </h2>
+            <p class="type-text mt-4 opacity-90">
+              Hemos construido una propuesta pensada para generar claridad,
+              orden y mejores decisiones en negocios que necesitan avanzar con
+              más seguridad.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {
+              stats.map((stat) => (
+                <div class="rounded-[var(--radius-card-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] p-5 text-center shadow-[var(--shadow-card)]">
+                  <div class="type-h3 text-[var(--color-brand-green)]">
+                    {stat.value}
+                  </div>
+                  <p class="type-note mt-2 text-[var(--color-text-note)]">
+                    {stat.label}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--color-surface-base)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div class="mx-auto max-w-[980px] text-center">
+          <p class="type-eyebrow uppercase text-[var(--color-text-muted)]">
+            TESTIMONIOS
+          </p>
+          <h2 class="type-h2 mt-3 text-[var(--color-brand-blue-strong)]">
+            La confianza se construye cuando el cliente
+            <span class="text-[var(--color-brand-green)]">
+              sí siente el cambio</span
+            >
+          </h2>
+        </div>
+
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          {
+            testimonials.map((item) => (
+              <article class="interactive-card-soft rounded-[var(--radius-card-lg)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] p-6 shadow-[var(--shadow-card)] sm:p-7">
+                <p class="type-card-body text-[var(--color-text-body)]">
+                  “{item.quote}”
+                </p>
+
+                <div class="mt-6 border-t border-[var(--color-border-soft)] pt-4">
+                  <p class="type-h5 text-[var(--color-brand-blue-strong)]">
+                    {item.author}
+                  </p>
+                  <p class="type-text-sm mt-1 text-[var(--color-text-muted)]">
+                    {item.role}
+                  </p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contacto"
+      class="bg-[var(--color-brand-blue)] py-14 sm:py-16 lg:py-20"
+    >
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div
+          class="rounded-[var(--radius-card-lg)] border border-white/10 bg-white/10 p-7 text-center text-[var(--color-text-on-dark)] sm:p-8 lg:p-10"
+        >
+          <p class="type-eyebrow uppercase opacity-80">CONVERSEMOS</p>
+
+          <h2 class="type-h2 mt-3 text-[var(--color-text-on-dark)]">
+            Si tu negocio necesita más orden, más claridad o más ventas,
+            <span class="text-[var(--color-brand-green)]">
+              podemos ayudarte</span
+            >
+          </h2>
+
+          <p class="type-text mx-auto mt-4 max-w-[860px] opacity-90">
+            La idea no es venderte algo que no necesitas. La idea es entender en
+            qué etapa estás, qué te está frenando y qué solución tiene más
+            sentido para avanzar contigo.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <a
+              href="#contacto-form"
+              class="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-green)] px-8 text-center text-white shadow-[var(--shadow-button-green)] sm:min-w-[230px]"
+            >
+              Quiero una conversación
+            </a>
+
+            <a
+              href="/"
+              class="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] border border-white/15 bg-transparent px-8 text-center text-[var(--color-text-on-dark)] sm:min-w-[230px]"
+            >
+              Volver al inicio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
