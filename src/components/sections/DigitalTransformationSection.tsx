@@ -16,7 +16,7 @@ const services: ServiceItem[] = [
       "Orientado a captar clientes",
       "Optimizado para celulares",
     ],
-    href: "#presencia-digital",
+    href: "/contacto",
     icon: "presence",
   },
   {
@@ -28,7 +28,7 @@ const services: ServiceItem[] = [
       "Más rapidez en atención",
       "Más control en tu operación",
     ],
-    href: "#automatizacion",
+    href: "/contacto",
     icon: "automation",
   },
   {
@@ -40,7 +40,7 @@ const services: ServiceItem[] = [
       "Más orden y seguimiento",
       "Escalable para crecer",
     ],
-    href: "#sistemas-medida",
+    href: "/contacto",
     icon: "systems",
   },
 ];
@@ -115,7 +115,7 @@ function ServiceIcon({ icon }: { icon: ServiceItem["icon"] }) {
 
 export default function DigitalTransformationSection() {
   return (
-    <section className="bg-[var(--color-brand-blue)] py-14 sm:py-16 lg:py-20">
+    <section id="transformacion-digital" className="bg-[var(--color-brand-blue)] py-14 sm:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-[1100px] text-center">
           <p className="type-eyebrow uppercase text-[var(--color-text-on-dark)] opacity-80">
@@ -211,14 +211,14 @@ export default function DigitalTransformationSection() {
 
             <div className="flex flex-col gap-4 sm:flex-row lg:justify-end">
               <a
-                href="#contacto"
+                href="/contacto"
                 className="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-green)] px-8 text-center text-white shadow-[var(--shadow-button-green)] sm:min-w-[220px]"
               >
                 Quiero asesoría
               </a>
 
               <a
-                href="#servicios"
+                href="/contacto"
                 className="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] border border-white/15 bg-transparent px-8 text-center text-[var(--color-text-on-dark)] sm:min-w-[220px]"
               >
                 Ver más detalles

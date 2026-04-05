@@ -35,14 +35,14 @@ export default function Hero({
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row lg:mt-9">
               <a
-                href="#reunion"
+                href="/contacto"
                 className="interactive-button-soft type-button inline-flex min-h-[64px] items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-green)] px-8 text-center text-white shadow-[var(--shadow-button-green)]"
               >
                 Agenda una reunión gratis
               </a>
 
               <a
-                href="#asesoria"
+                href="/contacto"
                 className="interactive-button-soft type-button inline-flex min-h-[64px] items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-blue-strong)] px-8 text-center text-white shadow-[var(--shadow-button-neutral)]"
               >
                 Asesoría virtual

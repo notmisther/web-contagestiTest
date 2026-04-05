@@ -1,77 +1,77 @@
-:root {
-  /* Layout */
-  --page-bg: #f8fafb;
-  --header-height: 61px;
-  --section-max: 1280px;
+  :root {
+    /* Layout */
+    --page-bg: #f8fafb;
+    --header-height: 61px;
+    --section-max: 1280px;
 
-  /* Font */
-  --font-main: "Nunito Sans", sans-serif;
+    /* Font */
+    --font-main: "Nunito Sans", sans-serif;
 
-  /* Brand colors */
-  --color-brand-blue: #0d4b5a;
-  --color-brand-blue-strong: #123f52;
-  --color-brand-green: #34be78;
-  --color-brand-green-strong: #00ce63;
+    /* Brand colors */
+    --color-brand-blue: #0d4b5a;
+    --color-brand-blue-strong: #123f52;
+    --color-brand-green: #34be78;
+    --color-brand-green-strong: #00ce63;
 
-  /* Surfaces */
-  --color-surface-base: #ececec;
-  --color-surface-soft: #f0f0f0;
-  --color-surface-soft-hover: #e1e4e6;
-  --color-surface-white: #f4f4f4;
+    /* Surfaces */
+    --color-surface-base: #ececec;
+    --color-surface-soft: #f0f0f0;
+    --color-surface-soft-hover: #e1e4e6;
+    --color-surface-white: #f4f4f4;
 
-  /* Text */
-  --color-text-main: #163d4f;
-  --color-text-dark: #171717;
-  --color-text-body: #2b2b2b;
-  --color-text-muted: #565656;
-  --color-text-on-dark: #edf2f4;
-  --color-text-note: #24495a;
+    /* Text */
+    --color-text-main: #163d4f;
+    --color-text-dark: #171717;
+    --color-text-body: #2b2b2b;
+    --color-text-muted: #565656;
+    --color-text-on-dark: #edf2f4;
+    --color-text-note: #24495a;
 
-  /* Borders */
-  --color-border-soft: #a4a4a4;
-  --color-border-soft-strong: #8e8e8e;
+    /* Borders */
+    --color-border-soft: #a4a4a4;
+    --color-border-soft-strong: #8e8e8e;
 
-  /* Small UI */
-  --color-dot: #141414;
+    /* Small UI */
+    --color-dot: #141414;
 
-  /* Radius */
-  --radius-card-lg: 34px;
-  --radius-card-md: 28px;
-  --radius-button: 20px;
-  --radius-pill: 999px;
+    /* Radius */
+    --radius-card-lg: 34px;
+    --radius-card-md: 28px;
+    --radius-button: 20px;
+    --radius-pill: 999px;
 
-  /* Shadows */
-  --shadow-card: 0 18px 42px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 16px 34px rgba(0, 0, 0, 0.1);
-  --shadow-button-green: 0 10px 22px rgba(52, 190, 120, 0.18);
-  --shadow-button-neutral: 0 10px 22px rgba(0, 0, 0, 0.08);
+    /* Shadows */
+    --shadow-card: 0 18px 42px rgba(0, 0, 0, 0.08);
+    --shadow-card-hover: 0 16px 34px rgba(0, 0, 0, 0.1);
+    --shadow-button-green: 0 10px 22px rgba(52, 190, 120, 0.18);
+    --shadow-button-neutral: 0 10px 22px rgba(0, 0, 0, 0.08);
 
-  /* Motion */
-  --transition-soft: 300ms cubic-bezier(0.22, 1, 0.36, 1);
-  --transition-card: 500ms cubic-bezier(0.22, 1, 0.36, 1);
+    /* Motion */
+    --transition-soft: 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-card: 500ms cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Typography scale */
-  --fs-h1: clamp(2.75rem, 1.7rem + 2.9vw, 4.6rem);
-  --fs-h1-5: clamp(2.6rem, 3.05vw + 1rem, 4rem);
-  --fs-h2: clamp(2.2rem, 2.45vw + 1rem, 3.45rem);
-  --fs-h2-5: clamp(1.95rem, 2vw + 0.95rem, 2.95rem);
-  --fs-h3: clamp(1.72rem, 1.3vw + 0.98rem, 2.45rem);
-  --fs-h3-5: clamp(1.56rem, 1vw + 0.96rem, 2.05rem);
-  --fs-h4: clamp(1.38rem, 0.8vw + 0.92rem, 1.8rem);
-  --fs-h4-5: clamp(1.24rem, 0.6vw + 0.9rem, 1.55rem);
-  --fs-h5: clamp(1.08rem, 0.28vw + 1rem, 1.22rem);
-  --fs-h5-5: clamp(1rem, 0.18vw + 0.96rem, 1.12rem);
+    /* Typography scale */
+    --fs-h1: clamp(2.75rem, 1.7rem + 2.9vw, 4.6rem);
+    --fs-h1-5: clamp(2.6rem, 3.05vw + 1rem, 4rem);
+    --fs-h2: clamp(2.2rem, 2.45vw + 1rem, 3.45rem);
+    --fs-h2-5: clamp(1.95rem, 2vw + 0.95rem, 2.95rem);
+    --fs-h3: clamp(1.72rem, 1.3vw + 0.98rem, 2.45rem);
+    --fs-h3-5: clamp(1.56rem, 1vw + 0.96rem, 2.05rem);
+    --fs-h4: clamp(1.38rem, 0.8vw + 0.92rem, 1.8rem);
+    --fs-h4-5: clamp(1.24rem, 0.6vw + 0.9rem, 1.55rem);
+    --fs-h5: clamp(1.08rem, 0.28vw + 1rem, 1.22rem);
+    --fs-h5-5: clamp(1rem, 0.18vw + 0.96rem, 1.12rem);
 
-  --fs-text: clamp(1.05rem, 1rem + 0.16vw, 1.08rem);
-  --fs-text-sm: clamp(0.92rem, 0.1vw + 0.9rem, 0.98rem);
-  --fs-button: 1.05rem;
+    --fs-text: clamp(1.05rem, 1rem + 0.16vw, 1.08rem);
+    --fs-text-sm: clamp(0.92rem, 0.1vw + 0.9rem, 0.98rem);
+    --fs-button: 1.05rem;
 
-  /* Line height / tracking */
-  --lh-display: 1.05;
-  --lh-heading: 1.08;
-  --lh-tight: 1.02;
-  --lh-body: 1.2;
-  --lh-card: 1.15;
-  --tracking-display: -0.04em;
-  --tracking-title: -0.03em;
-}
+    /* Line height / tracking */
+    --lh-display: 1.05;
+    --lh-heading: 1.08;
+    --lh-tight: 1.02;
+    --lh-body: 1.2;
+    --lh-card: 1.15;
+    --tracking-display: -0.04em;
+    --tracking-title: -0.03em;
+  }

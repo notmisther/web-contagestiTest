@@ -1,0 +1,310 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { actions, isInputError } from "astro:actions";
+
+export const prerender = false;
+
+const result = Astro.getActionResult(actions.submitLead);
+const inputErrors = isInputError(result?.error) ? result.error.fields : {};
+const hasGenericError = result?.error && !isInputError(result.error);
+const successMessage = result?.data?.message ?? "";
+---
+
+<Layout title="Contacto | Contagesti">
+  <main class="bg-[var(--page-bg)]">
+    <section class="bg-[var(--color-brand-blue)] py-14 sm:py-16 lg:py-20">
+      <div
+        class="mx-auto w-full max-w-[var(--section-max)] px-5 sm:px-8 lg:px-10"
+      >
+        <div
+          class="grid items-start gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10"
+        >
+          <div
+            class="rounded-[var(--radius-card-lg)] border border-white/10 bg-white/10 p-7 text-[var(--color-text-on-dark)] sm:p-8 lg:p-10"
+          >
+            <p class="type-eyebrow uppercase opacity-80">CONVERSEMOS</p>
+
+            <h1 class="type-h1-5 mt-3 text-[var(--color-text-on-dark)]">
+              Cuéntanos de tu negocio y te ayudamos a encontrar la{" "}
+              <span class="text-[var(--color-brand-green)]">
+                mejor solución
+              </span>
+            </h1>
+
+            <p class="type-text mt-5 max-w-[640px] opacity-90">
+              Si necesitas asesoría, soluciones contables, capacitación, o hacer
+              que tu negocio se transforme hacia la digitalización, este
+              formulario nos ayuda a entender mejor tu caso para responderte con
+              más claridad y más rapidez.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <div
+                class="rounded-[var(--radius-card-md)] border border-white/10 bg-white/10 p-5"
+              >
+                <p class="type-h5 text-[var(--color-text-on-dark)]">
+                  Respuesta más útil
+                </p>
+                <p class="type-text-sm mt-2 opacity-85">
+                  Mientras más claro nos cuentes qué necesitas, mejor podremos
+                  orientarte.
+                </p>
+              </div>
+
+              <div
+                class="rounded-[var(--radius-card-md)] border border-white/10 bg-white/10 p-5"
+              >
+                <p class="type-h5 text-[var(--color-text-on-dark)]">
+                  Pensado para emprendedores
+                </p>
+                <p class="type-text-sm mt-2 opacity-85">
+                  No necesitas tener todo definido. También podemos ayudarte a
+                  aterrizar la idea.
+                </p>
+              </div>
+
+              <div
+                class="rounded-[var(--radius-card-md)] border border-white/10 bg-white/10 p-5"
+              >
+                <p class="type-h5 text-[var(--color-text-on-dark)]">
+                  Contacto directo
+                </p>
+                <p class="type-text-sm mt-2 opacity-85">
+                  Tú eliges si prefieres que te escribamos por WhatsApp o te
+                  llamemos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-[var(--radius-card-lg)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] p-7 shadow-[var(--shadow-card)] sm:p-8 lg:p-10"
+          >
+            <p class="type-eyebrow uppercase text-[var(--color-text-muted)]">
+              FORMULARIO DE CONTACTO
+            </p>
+
+            <h2 class="type-h3 mt-3 text-[var(--color-brand-blue-strong)]">
+              Déjanos tus datos
+            </h2>
+
+            <p class="type-text mt-3 text-[var(--color-text-body)]">
+              Completa este formulario y te responderemos según la opción de
+              contacto que prefieras.
+            </p>
+
+            {
+              successMessage && (
+                <div class="mt-6 rounded-[var(--radius-card-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-soft)] px-4 py-4">
+                  <p class="type-text-sm text-[var(--color-brand-blue-strong)]">
+                    {successMessage}
+                  </p>
+                </div>
+              )
+            }
+
+            {
+              hasGenericError && (
+                <div class="mt-6 rounded-[var(--radius-card-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-soft)] px-4 py-4">
+                  <p class="type-text-sm text-[var(--color-brand-blue-strong)]">
+                    Hubo un problema al enviar el formulario. Inténtalo
+                    nuevamente.
+                  </p>
+                </div>
+              )
+            }
+
+            <form
+              method="POST"
+              action={actions.submitLead}
+              class="mt-6 space-y-5"
+            >
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label
+                    for="nombres"
+                    class="type-text-sm mb-2 block text-[var(--color-text-body)]"
+                  >
+                    Nombres
+                  </label>
+                  <input
+                    id="nombres"
+                    name="nombres"
+                    type="text"
+                    required
+                    class="w-full rounded-[20px] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] px-4 py-4 text-[var(--color-text-main)] outline-none transition-colors duration-300 focus:border-[var(--color-brand-green)]"
+                  />
+                  {
+                    inputErrors.nombres && (
+                      <p class="type-note mt-2 text-[var(--color-brand-blue-strong)]">
+                        {inputErrors.nombres[0]}
+                      </p>
+                    )
+                  }
+                </div>
+
+                <div>
+                  <label
+                    for="apellidos"
+                    class="type-text-sm mb-2 block text-[var(--color-text-body)]"
+                  >
+                    Apellidos
+                  </label>
+                  <input
+                    id="apellidos"
+                    name="apellidos"
+                    type="text"
+                    required
+                    class="w-full rounded-[20px] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] px-4 py-4 text-[var(--color-text-main)] outline-none transition-colors duration-300 focus:border-[var(--color-brand-green)]"
+                  />
+                  {
+                    inputErrors.apellidos && (
+                      <p class="type-note mt-2 text-[var(--color-brand-blue-strong)]">
+                        {inputErrors.apellidos[0]}
+                      </p>
+                    )
+                  }
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="celular"
+                  class="type-text-sm mb-2 block text-[var(--color-text-body)]"
+                >
+                  Número de celular
+                </label>
+                <input
+                  id="celular"
+                  name="celular"
+                  type="tel"
+                  inputmode="tel"
+                  required
+                  class="w-full rounded-[20px] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] px-4 py-4 text-[var(--color-text-main)] outline-none transition-colors duration-300 focus:border-[var(--color-brand-green)]"
+                />
+                {
+                  inputErrors.celular && (
+                    <p class="type-note mt-2 text-[var(--color-brand-blue-strong)]">
+                      {inputErrors.celular[0]}
+                    </p>
+                  )
+                }
+              </div>
+
+              <fieldset>
+                <legend
+                  class="type-text-sm mb-3 block text-[var(--color-text-body)]"
+                >
+                  ¿Cómo prefieres que te contactemos?
+                </legend>
+
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <label
+                    class="flex cursor-pointer items-center gap-3 rounded-[20px] border border-[var(--color-border-soft)] px-4 py-4 transition-colors duration-300 hover:border-[var(--color-brand-green)]"
+                  >
+                    <input
+                      type="radio"
+                      name="medioContacto"
+                      value="whatsapp"
+                      required
+                    />
+                    <span class="type-text-sm text-[var(--color-text-body)]"
+                      >WhatsApp</span
+                    >
+                  </label>
+
+                  <label
+                    class="flex cursor-pointer items-center gap-3 rounded-[20px] border border-[var(--color-border-soft)] px-4 py-4 transition-colors duration-300 hover:border-[var(--color-brand-green)]"
+                  >
+                    <input
+                      type="radio"
+                      name="medioContacto"
+                      value="llamada"
+                      required
+                    />
+                    <span class="type-text-sm text-[var(--color-text-body)]"
+                      >Llamada</span
+                    >
+                  </label>
+                </div>
+
+                {
+                  inputErrors.medioContacto && (
+                    <p class="type-note mt-2 text-[var(--color-brand-blue-strong)]">
+                      {inputErrors.medioContacto[0]}
+                    </p>
+                  )
+                }
+              </fieldset>
+
+              <div>
+                <label
+                  for="servicioInteres"
+                  class="type-text-sm mb-2 block text-[var(--color-text-body)]"
+                >
+                  ¿Qué te interesa hoy? <span class="opacity-70"
+                    >(opcional)</span
+                  >
+                </label>
+                <select
+                  id="servicioInteres"
+                  name="servicioInteres"
+                  class="w-full rounded-[20px] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] px-4 py-4 text-[var(--color-text-main)] outline-none transition-colors duration-300 focus:border-[var(--color-brand-green)]"
+                >
+                  <option value="">Selecciona una opción</option>
+                  <option value="asesoria"
+                    >Asesoría contable / financiera / gestión</option
+                  >
+                  <option value="capacitaciones">Capacitaciones</option>
+                  <option value="presencia-digital">Presencia digital</option>
+                  <option value="automatizacion"
+                    >Automatización de procesos</option
+                  >
+                  <option value="sistemas-a-medida">Sistemas a medida</option>
+                  <option value="aun-no-lo-se">Aún no lo sé</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="mensaje"
+                  class="type-text-sm mb-2 block text-[var(--color-text-body)]"
+                >
+                  Cuéntanos brevemente qué necesitas <span class="opacity-70"
+                    >(opcional)</span
+                  >
+                </label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="5"
+                  maxlength="500"
+                  class="w-full rounded-[20px] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] px-4 py-4 text-[var(--color-text-main)] outline-none transition-colors duration-300 focus:border-[var(--color-brand-green)]"
+                ></textarea>
+                {
+                  inputErrors.mensaje && (
+                    <p class="type-note mt-2 text-[var(--color-brand-blue-strong)]">
+                      {inputErrors.mensaje[0]}
+                    </p>
+                  )
+                }
+              </div>
+
+              <button
+                type="submit"
+                class="interactive-button-soft type-button inline-flex min-h-[72px] w-full items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-green)] px-8 text-center text-white shadow-[var(--shadow-button-green)]"
+              >
+                Enviar mis datos
+              </button>
+
+              <p class="type-note text-center text-[var(--color-text-note)]">
+                Tus datos serán usados únicamente para contactarte en relación
+                con tu consulta.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

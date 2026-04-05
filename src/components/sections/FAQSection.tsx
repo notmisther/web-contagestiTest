@@ -123,14 +123,14 @@ export default function FAQSection() {
 
           <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center">
             <a
-              href="#contacto"
+              href="/contacto"
               className="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] bg-[var(--color-brand-green)] px-8 text-center text-white shadow-[var(--shadow-button-green)] sm:min-w-[220px]"
             >
               Quiero asesoría
             </a>
 
             <a
-              href="#servicios"
+              href="/contacto"
               className="interactive-button-soft type-button inline-flex min-h-[72px] items-center justify-center rounded-[var(--radius-button)] border border-[var(--color-border-soft)] bg-[var(--color-surface-white)] px-8 text-center text-[var(--color-brand-blue-strong)] sm:min-w-[220px]"
             >
               Tengo una pregunta
