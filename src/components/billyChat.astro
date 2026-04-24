@@ -1,0 +1,32 @@
+---
+// src/components/BillyChat.astro
+---
+
+<div id="n8n-chat"></div>
+
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+<style>
+    /* Variables para que el chat se vea increíble en modo oscuro */
+    :root {
+        --chat--color--primary: #007cf0;
+        --chat--gradient-blue: linear-gradient(135deg, #004e92 0%, #000428 100%);
+        --chat--window--z-index: 9999;
+    }
+</style>
+
+<script is:inline type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+        webhookUrl: 'http://localhost:5678/webhook/aa494b4b-623a-482f-8270-4a643d7fb5fa/chat',
+        title: 'Billy 🤖',
+        subtitle: 'Tu asistente personal inteligente',
+        placeholder: 'Escribe tu consulta aquí...',
+        initialMessages: [
+            '¡Hola! 👋',
+            'Me llamo **Billy**, tu asistente personal. Estoy aquí para ayudarte con lo que necesites.',
+            '¿En qué puedo ayudarte hoy?'
+        ]
+    });
+</script>
