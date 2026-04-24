@@ -8,6 +8,8 @@ import AccountingSolutionsSection from "../components/sections/AccountingSolutio
 import TrainingSection from "../components/sections/TrainingSection";
 import DigitalTransformationSection from "../components/sections/DigitalTransformationSection";
 import FAQSection from "../components/sections/FAQSection";
+import BillyChat from '../components/billyChat.astro';
+
 ---
 
 <Layout title="Contagesti">
@@ -25,4 +27,5 @@ import FAQSection from "../components/sections/FAQSection";
   <section id="preguntas-frecuentes">
     <FAQSection client:visible />
   </section>
+  <BillyChat />
 </Layout>
